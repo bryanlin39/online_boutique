@@ -1,13 +1,13 @@
-<h2>Log in</h2>
+<h2>Log In</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "ui form"}) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
@@ -19,8 +19,10 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log In", class: "ui primary basic button" %>
   </div>
 <% end %>
+
+<div class="ui horizontal divider">Links</div>
 
 <%= render "devise/shared/links" %>
