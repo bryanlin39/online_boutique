@@ -15,7 +15,7 @@
         Online Boutique
       </div>
       <%= link_to "Home", root_path, class: "item" %>
-      <%= link_to "Products", root_path, class: "item" %>
+      <%= link_to "Products", products_path, class: "item" %>
       <div class="right menu">
         <% if current_user %>
           <%= link_to current_user.username, profile_path, class: "item" %>

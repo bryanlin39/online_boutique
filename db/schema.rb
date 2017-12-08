@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171207234635) do
     t.string "name"
     t.string "description"
     t.decimal "price"
+    t.integer "rating"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
