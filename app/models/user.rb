@@ -23,4 +23,16 @@ class User < ApplicationRecord
   } # etc.
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
+  # everything above is for Devise authentication/authorization
+  
+  # relationship with Account
+  has_one :account
+
+  after_create :register_account
+
+  def register_account
+    user = User.last
+    account = Account.create!(user_id: user.id)
+  end
+
 end
