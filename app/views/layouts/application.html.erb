@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <!-- <% if flash[:alert] %>
+    <% if flash[:alert] %>
       <div class="ui container">
         <div class="ui negative message">
           <%= flash[:alert] %>
@@ -41,11 +41,7 @@
           <%= flash[:notice] %>
         </div>
       </div>
-    <% end %> -->
-
-    <div class="ui container">
-      <%= semantic_flash %>
-    </div>
+    <% end %>
 
     <div class="ui container">
       <%= yield %>

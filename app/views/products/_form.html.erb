@@ -1,0 +1,21 @@
+<%= render 'layouts/errors', object: @product %>
+
+<%= form_for @product, html: { multipart: true, class: 'ui form' } do |f| %>
+  <div class='field'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class='field'>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class='field'>
+    <%= f.label :price %>
+    <%= f.number_field :price, min: 0, step: 0.01 %>
+  </div>
+  <div class='field'>
+    <%= f.label 'Upload a Picture' %>
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit 'Add Product', class: 'ui positive basic button' %>
+<% end %>
