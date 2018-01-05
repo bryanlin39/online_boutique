@@ -2,7 +2,7 @@
 
 <% if @products.any? %>
   <% @products.each do |product| %>
-    <%= product.name %>
+    <%= link_to product.name, product_path(product) %>
   <% end %>
 <% else %>
   <h3>No products at this time.</h3>

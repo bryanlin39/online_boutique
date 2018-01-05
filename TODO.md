@@ -22,22 +22,24 @@
   - [ ] Belongs to Account
   - [ ] Belongs to Product
 
-
 ### Views
 - [ ] CRUD for Product
   - Admin authorization
 - [ ] CRUD for Shopping Cart
 - [ ] Account Profile
 
-
 ### Misc
 - [ ] Stripe for checkout
 - [ ] Devise admin dashboard
 
-
 ### Styling
 - [x] SemanticUI
 - [ ] SASS
+
+### Scopes
+- [ ] Product
+  - [ ] Recently added
+  - [ ] Most reviewed
 
 
 ## Further Exploration
@@ -48,3 +50,5 @@
 - [ ] Email confirmation
   - [ ] On sign up
   - [ ] On checkout
+- [ ] APIs
+  - [ ] Sales tax
