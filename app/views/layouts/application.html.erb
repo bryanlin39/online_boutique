@@ -30,6 +30,7 @@
     <% if flash[:alert] %>
       <div class="ui container">
         <div class="ui negative message">
+          <i class="close icon"></i>
           <%= flash[:alert] %>
         </div>
       </div>
@@ -38,6 +39,7 @@
     <% if flash[:notice] %>
       <div class="ui container">
         <div class="ui green message">
+          <i class="close icon"></i>
           <%= flash[:notice] %>
         </div>
       </div>

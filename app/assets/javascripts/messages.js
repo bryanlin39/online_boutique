@@ -1,10 +1,14 @@
-$(document).ready(function() {
+var closeMessage = function() {
   $('.message .close')
     .on('click', function() {
       $(this)
         .closest('.message')
-        .transition('fade')
+        .remove()
       ;
     })
   ;
+}
+
+$(document).ready(function() {
+  closeMessage();
 });

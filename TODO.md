@@ -34,6 +34,7 @@
 
 ### Styling
 - [x] SemanticUI
+  - [ ] Icons
 - [ ] SASS
 
 ### Scopes
