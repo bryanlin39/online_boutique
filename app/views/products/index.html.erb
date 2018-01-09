@@ -15,8 +15,10 @@
 
 
 <% if current_user && current_user.admin %>
-  <div class="ui horizontal divider">
-    ADMIN
-  </div>
-  <%= link_to "Add a New Product", new_product_path %>
+  <h4 class="ui horizontal divider header">
+    <i class="privacy icon"></i>
+    ADMINISTRATOR
+  </h4>
+  <i class="plus icon"></i>
+  <%= link_to 'Add a New Product', new_product_path %>
 <% end %>

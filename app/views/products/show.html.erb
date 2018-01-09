@@ -39,11 +39,11 @@
         <div>
           <% if current_user && (review.account == current_user.account) %>
             <i class="edit icon"></i>
-            <%= link_to 'Edit Review', edit_product_review_path(@product, review) %>
+            <%= link_to 'Edit', edit_product_review_path(@product, review) %>
           <% end %>
           <div class='right floated'>
             <i class="trash icon"></i>
-            <%= link_to 'Delete Review', product_review_path(@product, review), method: 'delete', data: {confirm: 'Delete this review?'} %>
+            <%= link_to 'Delete', product_review_path(@product, review), method: 'delete', data: {confirm: 'Delete this review?'} %>
           </div>
         </div>
       </div>
@@ -52,4 +52,19 @@
   <% end %>
 <% else %>
   <p>No reviews for this product yet.</p>
+<% end %>
+
+<% if current_user && current_user.admin %>
+  <h4 class="ui horizontal divider header">
+    <i class="privacy icon"></i>
+    ADMINISTRATOR
+  </h4>
+  <div>
+    <i class="edit icon"></i>
+    <%= link_to 'Edit Product', edit_product_path(@product) %>
+  </div>
+  <div>
+    <i class="trash icon"></i>
+    <%= link_to 'Remove Product', product_path(@product), method: 'delete', data: {confirm: 'Remove this product?'} %>
+  </div>
 <% end %>

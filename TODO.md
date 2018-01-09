@@ -7,25 +7,28 @@
   - [x] Has one Account
 - [x] Account - user_id
   - [x] Belongs to User
-  - [ ] Has many Reviews
+  - [x] Has many Reviews
   - [ ] Has many Orders
 - [x] Product - name, description, price, rating, image
   - [ ] Has many Order Items
-  - [ ] Has many Reviews
+  - [x] Has many Reviews
 - [ ] Order - status, subtotal, tax, shipping, total_price
   - [ ] Belongs to Account
   - [ ] Has many Order Items
 - [ ] Order Item - quantity
   - [ ] Belongs to Order
   - [ ] Belongs to Product
-- [ ] Review - rating, content
-  - [ ] Belongs to Account
-  - [ ] Belongs to Product
+- [x] Review - rating, content
+  - [x] Belongs to Account
+  - [x] Belongs to Product
 
 ### Views
-- [ ] CRUD for Product
-  - Admin authorization
+- [x] CRUD for Product
+  - [x] Admin authorization
 - [ ] CRUD for Shopping Cart
+- [x] CRUD for Review
+  - [x] Admin authorization for delete
+  - [x] User authorization for delete and edit
 - [ ] Account Profile
 - [ ] Sticky footer for all pages
   * https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/

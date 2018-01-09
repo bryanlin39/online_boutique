@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.new(review_params)
     @review.account = current_user.account
     if @review.save
-      redirect_to product_path(@product), notice: 'Your review has been submitted.'
+      redirect_to product_path(@product), notice: "Your review has been submitted."
     else
       render :new
     end
@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to product_path(@product), notice: 'Your review has been updated.'
+      redirect_to product_path(@product), notice: "Your review has been updated."
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to product_path(@product), notice: 'Review has been deleted.'
+    redirect_to product_path(@product), notice: "Review has been deleted."
   end
 
 private
