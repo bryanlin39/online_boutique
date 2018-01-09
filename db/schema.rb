@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180109001619) do
     t.integer "account_id"
     t.integer "product_id"
     t.string "content"
-    t.integer "rating"
+    t.integer "rating", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

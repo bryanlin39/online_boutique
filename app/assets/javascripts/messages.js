@@ -12,3 +12,7 @@ var closeMessage = function() {
 $(document).ready(function() {
   closeMessage();
 });
+
+$(document).on('turbolinks:load', function() {
+  closeMessage();
+});

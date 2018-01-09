@@ -7,8 +7,10 @@ var displayRating = function() {
 }
 
 var getRating = function() {
-  var currentRating = $('.review-rating').rating('get rating');
-  $('#hidden-rating').val(currentRating);
+  $('.review-rating')
+    .rating('setting', 'onRate', function(value) {
+      $('#hidden-rating').val(value);
+    });
 }
 
 var executeRatingsFunctions = function() {

@@ -1,10 +1,13 @@
 <% if object.errors.any? %>
-  <div id='errors' class='container card'>
-    <h3>Please fix these errors:</h3>
-    <ul>
-      <% object.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+  <div class='ui container'>
+    <div class='ui negative message'>
+      <i class='close icon'></i>
+      <h3 class='ui header'>Please fix these errors:</h3>
+      <ul>
+        <% object.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>

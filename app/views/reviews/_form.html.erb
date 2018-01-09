@@ -3,7 +3,7 @@
 <%= form_for [@product, @review], html: { multipart: true, class: 'ui form' } do |f| %>
   <div class='field'>
     <%= f.label :rating %>
-    <div class='ui massive star rating review-rating'></div>
+    <div class='ui massive star rating review-rating' data-rating='<%= @review.rating %>'></div>
   </div>
   <%= f.hidden_field :rating, id: 'hidden-rating' %>
   <div class='field'>

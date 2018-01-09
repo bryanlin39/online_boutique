@@ -34,6 +34,20 @@
         <p><%= review.content %></p>
       </div>
     </div>
+    <% if current_user && (review.account == current_user.account || current_user.admin) %>
+      <div class='extra content'>
+        <div>
+          <% if current_user && (review.account == current_user.account) %>
+            <i class="edit icon"></i>
+            <%= link_to 'Edit Review', edit_product_review_path(@product, review) %>
+          <% end %>
+          <div class='right floated'>
+            <i class="trash icon"></i>
+            <%= link_to 'Delete Review', product_review_path(@product, review), method: 'delete', data: {confirm: 'Delete this review?'} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
   <% end %>
 <% else %>
