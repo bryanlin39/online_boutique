@@ -1,0 +1,14 @@
+<%= render 'layouts/errors', object: @review %>
+
+<%= form_for [@product, @review], html: { multipart: true, class: 'ui form' } do |f| %>
+  <div class='field'>
+    <%= f.label :rating %>
+    <div class='ui massive star rating review-rating'></div>
+  </div>
+  <%= f.hidden_field :rating, id: 'hidden-rating' %>
+  <div class='field'>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <%= f.submit 'Submit Review', class: 'ui positive basic button' %>
+<% end %>

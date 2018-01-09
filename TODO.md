@@ -27,6 +27,8 @@
   - Admin authorization
 - [ ] CRUD for Shopping Cart
 - [ ] Account Profile
+- [ ] Sticky footer for all pages
+  * https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 ### Misc
 - [ ] Stripe for checkout
@@ -53,3 +55,4 @@
   - [ ] On checkout
 - [ ] APIs
   - [ ] Sales tax
+- [ ] Add avatars to accounts

@@ -2,10 +2,40 @@
 
 <h3>Price: $<%= @product.price %></h3>
 
-<h4 class='ui horizontal divider header'>Description</h4>
+<h4 class='ui horizontal divider header'>
+  <i class='info circle icon'></i>
+  Description
+</h4>
 
 <h5><%= @product.description %></h5>
 
 <%= image_tag @product.image %>
 
-<h4 class='ui horizontal divider header'>Reviews</h4>
+<h4 class='ui horizontal divider header'>
+  <i class='comments icon'></i>
+  Reviews
+</h4>
+
+<a href='/products/<%= @product.id %>/reviews/new' class='ui primary button right floated'>
+  <i class="write icon"></i>
+  Write a Review
+</a>
+
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+  <div class='ui card'>
+    <div class='content'>
+      <div class='header'><%= review.account.user.username %></div>
+      <div class='meta'>
+        <span class='left floated time'><%= review.created_at.strftime('%m-%d-%Y') %></span>
+        <span class='right floated ui star rating disabled-rating' data-rating='<%= review.rating %>'></span>
+      </div>
+      <div class='description'>
+        <p><%= review.content %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <p>No reviews for this product yet.</p>
+<% end %>

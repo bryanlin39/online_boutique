@@ -1,12 +1,18 @@
 <h1>All Products</h1>
 
 <% if @products.any? %>
-  <% @products.each do |product| %>
-    <%= link_to product.name, product_path(product) %>
-  <% end %>
+  <div class='ui centered grid container'>
+    <% @products.each do |product| %>
+      <div class='five wide column'>
+        <%= link_to product.name, product_path(product) %>
+      </div>
+    <% end %>
+  </div>
 <% else %>
-  <h3>No products at this time.</h3>
+    <h3>No products at this time.</h3>
 <% end %>
+
+
 
 <% if current_user && current_user.admin %>
   <div class="ui horizontal divider">

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'pages#profile', as: 'profile'
 
-  resources :products
+  resources :products do
+    resources :reviews, except: [:index, :show]
+  end
 
 end
