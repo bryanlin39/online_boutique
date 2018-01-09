@@ -1,10 +1,32 @@
 <h1>All Products</h1>
 
 <% if @products.any? %>
-  <div class='ui centered grid container'>
+  <div class='ui three cards'>
     <% @products.each do |product| %>
-      <div class='five wide column'>
-        <%= link_to product.name, product_path(product) %>
+      <div class='card'>
+        <div class='image'>
+          <%= image_tag product.image %>
+        </div>
+        <div class='content'>
+          <div class='header'>
+            <%= link_to product.name, product_path(product) %>
+          </div>
+          <div class='description'>
+            <h4><%= number_to_currency(product.price) %></h4>
+          </div>
+        </div>
+        <div class='extra content'>
+          <span class='left floated'>
+            <i class="comments icon"></i>
+            <%= product.reviews.count %>
+            <% if product.reviews.count == 1 %>
+              Review
+            <% else %>
+              Reviews
+            <% end %>
+          </span>
+          <span class='right floated ui star rating disabled-rating' data-rating='<%= product.rating %>'></span>
+        </div>
       </div>
     <% end %>
   </div>

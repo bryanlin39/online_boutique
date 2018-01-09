@@ -28,10 +28,21 @@ class Seed
       password: 'asdfasdf',
       password_confirmation: 'asdfasdf'
     )
+
+    password = Faker::Internet.password
+
+    20.times do
+      User.create(
+        email: Faker::Internet.safe_email,
+        username: Faker::Internet.user_name,
+        password: password,
+        password_confirmation: password
+      )
+    end
   end
 
   def create_products
-    @product1 = Product.create(
+    Product.create(
       name: 'Bar Cart',
       description: 'A classy display for your spirits collection.',
       price: 125.00,
@@ -50,20 +61,35 @@ class Seed
       image: open('public/images/teepee.jpg')
     )
     Product.create(
-      name: 'Bracelets',
-      description: 'A set of 2 white/black bracelets.',
-      price: 18.00,
-      image: open('public/images/bracelets.png')
+      name: 'Coat Hanger',
+      description: 'A modern wall unit to hang coats and jackets.',
+      price: 48.00,
+      image: open('public/images/coat_hanger.jpg')
     )
   end
 
   def create_reviews
-    Review.create(
-      account_id: @user.id,
-      product_id: @product1.id,
-      content: 'Nice wooden cart for my alcohol storage.',
-      rating: 4
-    )
+    Product.all.each do |product|
+      Review.create(
+        account_id: @user.id,
+        product_id: product.id,
+        content: 'Great product! It was exactly as described, and well worth the price.',
+        rating: rand(4..5)
+      )
+      rand(5..30).times do
+        Review.create(
+          account_id: rand(User.first.id..User.last.id),
+          product_id: product.id,
+          content: Faker::Lorem.paragraph,
+          rating: rand(1..5)
+        )
+      end
+    end
+
+    Review.all.each do |review|
+      review.created_at = Faker::Time.between(DateTime.now - 1.year, DateTime.now)
+      review.save
+    end
   end
 
 end
