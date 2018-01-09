@@ -30,6 +30,8 @@
   - [x] Admin authorization for delete
   - [x] User authorization for delete and edit
 - [ ] Account Profile
+  - [ ] Order history
+  - [ ] Reviews
 - [ ] Sticky footer for all pages
   * https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
