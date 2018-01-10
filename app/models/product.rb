@@ -13,7 +13,7 @@ class Product < ApplicationRecord
     number_of_reviews = self.reviews.count
     self.reviews.each { |review| total += review.rating }
     average = total.to_f/number_of_reviews.to_f
-    self.rating = average
+    self.rating = average.round(1)
     self.save
   end
 

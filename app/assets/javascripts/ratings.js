@@ -13,10 +13,15 @@ var getRating = function() {
     });
 }
 
+var popupRating = function() {
+  $('.disabled-rating').popup();
+}
+
 var executeRatingsFunctions = function() {
   setMaxRating();
   displayRating();
   getRating();
+  popupRating();
 }
 
 $(document).ready(function() {

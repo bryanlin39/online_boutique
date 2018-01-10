@@ -61,3 +61,4 @@
 - [ ] APIs
   - [ ] Sales tax
 - [ ] Add avatars to accounts
+- [ ] Pagination for reviews
