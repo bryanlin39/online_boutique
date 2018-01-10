@@ -1,3 +1,49 @@
-<h2>Thank you for your order! Your card will be charged <%= number_to_currency @amount/100 %>. You will receive a confirmation email shortly.</h2>
+<h2>
+  <i class="green checkmark icon"></i>
+  Thank you for your business, <%= current_user.username %>!
+</h2>
+
+<h3>Your order will be shipped to <span class='green-text'><i><%= @name %></i></span> at <span class='green-text'><i><%= @address %></i></span> in 5-7 business days.</h3>
+
+<h3>You will receive a confirmation email (<span class='green-text'><i><%= @email %></i></span>) with a copy of the receipt below. You can also view your <%= link_to 'order history', profile_path %> in your profile page.</h3>
+
+<table class='ui celled table'>
+  <thead>
+    <tr>
+      <th class='ten wide'>
+        <h3>Receipt</h3>
+      </th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_items.each do |item| %>
+    <tr>
+      <td><h5><%= item.product.name %></h5></td>
+      <td class='center aligned'><%= number_to_currency item.product.price %> / ea</td>
+      <td class='center aligned'>x<%= item.quantity %></td>
+      <td class='right aligned'><%= number_to_currency (item.product.price * item.quantity) %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan='3'><h5>Tax</h5></td>
+      <td class='right aligned'><%= number_to_currency @order.tax %></td>
+    </tr>
+    <tr>
+      <td colspan='3'><h5>Shipping</h5></td>
+      <td class='right aligned'>$15.00</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr class='right aligned full-width'>
+      <th colspan='5'>
+        <h3>Your Order Total: <%= number_to_currency @order.total_price %>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+
 
 <%= link_to 'Continue Shopping', products_path %>

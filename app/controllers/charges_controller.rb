@@ -1,4 +1,5 @@
 class ChargesController < ApplicationController
+  before_action :authorize_user
 
   def new
     @order = current_order
@@ -7,7 +8,12 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     @order = current_order
-    @amount = (@order.subtotal * 100).to_i
+    @amount = (@order.total_price * 100).to_i
+
+    # Shipping information
+    @name = params[:shipping][:'first-name']
+    @address = params[:shipping][:address] + ", " + params[:shipping][:state] + ", " + params[:shipping][:'zip-code']
+    @email = params[:stripeEmail]
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],

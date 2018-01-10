@@ -1,20 +1,150 @@
 <h1>Checkout</h1>
 
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <h3>Order Total: <%= number_to_currency @order.subtotal %></h3>
-    </label>
-  </article>
+<%= form_tag charges_path, class: 'ui form' do %>
+  <div class='ui grid'>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Online Boutique"
-          data-amount="<%= @order.subtotal * 100 %>"
-          data-locale="auto"></script>
+    <div class='row'>
+      <div class='eight wide column'>
+        <h3 class="ui dividing header">Shipping Information</h3>
+        <div class="required field">
+          <label>Name</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" name="shipping[first-name]" placeholder="First Name">
+            </div>
+            <div class="field">
+              <input type="text" name="shipping[last-name]" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="required field">
+          <label>Address</label>
+          <div class="fields">
+            <div class="twelve wide field">
+              <input type="text" name="shipping[address]" placeholder="Street Address">
+            </div>
+            <div class="four wide field">
+              <input type="text" name="shipping[address-2]" placeholder="Apt #">
+            </div>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="ten wide required field">
+            <label>State</label>
+            <select class="ui fluid dropdown" name="shipping[state]">
+              <option value="">State</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="DC">District Of Columbia</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="six wide required field">
+            <label>Zip Code</label>
+            <input type="text" name="shipping[zip-code]" placeholder="Zip Code">
+          </div>
+        </div>
+      </div>
+
+      <div class='three wide column'>
+      </div>
+
+      <div class='five wide column'>
+        <h3 class="ui dividing header">Order Summary</h3>
+        <table class='ui fluid very basic collapsing celled table'>
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='ten wide'><h4>Subtotal</h4></td>
+              <td class='six wide'><%= number_to_currency @order.subtotal %></td>
+            </tr>
+            <tr>
+              <td><h4>Tax</h4></td>
+              <td><%= number_to_currency @order.tax %></td>
+            </tr>
+            <tr>
+              <td><h4>Shipping</h4></td>
+              <td>$15.00</td>
+            </tr>
+            <tr>
+              <td><h4>Total</h4></td>
+              <td><%= number_to_currency @order.total_price %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class='row'>
+
+      <div class='right aligned sixteen wide column'>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+
+          <label class="amount">
+            <h3>Order Total: <%= number_to_currency @order.total_price %></h3>
+          </label>
+        </article>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Online Boutique"
+                data-amount="<%= @order.total_price * 100 %>"
+                data-locale="auto"></script>
+      </div>
+    </div>
+
+  </div>
 <% end %>

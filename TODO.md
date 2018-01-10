@@ -32,9 +32,9 @@
 - [ ] Account Profile
   - [ ] Order history
   - [ ] Reviews
-- [ ] Checkout page
-  - [ ] Subtotal, shipping, tax, total
-  - [ ] Receipt page
+- [x] Checkout
+  - [x] Subtotal, shipping, tax, total
+  - [x] Receipt page
 - [ ] Product index page - list by date added
   - [ ] Scopes to sort by date added, price low to high, price high to low, most reviewed
 - [ ] Home page
@@ -49,6 +49,8 @@
 - [x] Stripe for checkout
   * Check Stripe documentation for deploying to Heroku (API keys)
 - [ ] Devise admin dashboard
+- [ ] Deploy to Heroku
+- [ ] README
 
 ### Styling
 - [x] SemanticUI
@@ -71,6 +73,7 @@
   - [ ] After checkout
 - [ ] APIs
   - [ ] Sales tax
+  - [ ] Shipping costs
+  - [ ] Mailer
 - [ ] Add avatars to accounts
 - [ ] Pagination for reviews
-- [ ] Deploy to Heroku
