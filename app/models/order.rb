@@ -10,6 +10,10 @@ class Order < ApplicationRecord
     self.order_items.collect { |item| item.product.price * item.quantity }.sum
   end
 
+  def total_items
+    self.order_items.collect { |item| item.quantity }.sum
+  end
+
 private
 
   def update_status

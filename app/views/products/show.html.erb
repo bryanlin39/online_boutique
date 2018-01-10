@@ -1,5 +1,5 @@
-<div class='ui two column grid'>
-  <div class='column'>
+<div class='ui grid'>
+  <div class='thirteen wide column'>
     <h1><%= @product.name %></h1>
 
     <div class='ui massive star rating disabled-rating' data-rating='<%= @product.rating.round %>'></div>
@@ -7,13 +7,19 @@
     <p><big><%= @product.rating %> out of 5 stars</big></p>
   </div>
 
-  <div class='right aligned column'>
+  <div class='right aligned three wide column'>
     <h3>Price: <%= number_to_currency @product.price %></h3>
 
-    <%= form_for @order_item do |f| %>
+    <%= form_for @order_item, html: { multipart: true, class: 'ui form' } do |f| %>
       <%= f.hidden_field :product_id, value: @product.id %>
-      <%= f.number_field :quantity %>
-      <%= f.submit "Add to Cart" %>
+      <div class='field'>
+        <%= f.label :quantity %>
+        <%= f.select :quantity, options_for_select(1..5), {}, {class: 'ui dropdown'} %>
+      </div>
+      <button type='submit' class='ui fluid positive button'>
+        <i class="add to cart icon"></i>
+        Add to Cart
+      </button>
     <% end %></p>
   </div>
 </div>

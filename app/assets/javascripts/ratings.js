@@ -13,21 +13,16 @@ var getRating = function() {
     });
 }
 
-var popupRating = function() {
-  $('.disabled-rating').popup();
-}
-
-var executeRatingsFunctions = function() {
+var executeRatings = function() {
   setMaxRating();
   displayRating();
   getRating();
-  popupRating();
 }
 
 $(document).ready(function() {
-  executeRatingsFunctions();
+  executeRatings();
 });
 
 $(document).on('turbolinks:load', function() {
-  executeRatingsFunctions();
+  executeRatings();
 });

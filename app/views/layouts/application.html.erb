@@ -18,6 +18,10 @@
       <%= link_to "Products", products_path, class: "item" %>
       <div class="right menu">
         <% if current_user %>
+          <%= link_to cart_path, class: "item cart-popup", :'data-content' => "#{current_order.total_items} items" do %>
+            <i class="shop icon"></i>
+            Cart
+          <% end %>
           <%= link_to current_user.username, profile_path, class: "item" %>
           <%= link_to "Sign Out", destroy_user_session_path, class: "item", method: 'delete' %>
         <% else %>

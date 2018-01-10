@@ -25,7 +25,7 @@
 ### Views
 - [x] CRUD for Product
   - [x] Admin authorization
-- [ ] CRUD for Shopping Cart
+- [x] CRUD for Shopping Cart
 - [x] CRUD for Review
   - [x] Admin authorization for delete
   - [x] User authorization for delete and edit
@@ -41,7 +41,7 @@
 
 ### Styling
 - [x] SemanticUI
-  - [ ] Icons
+  - [x] Icons
 - [ ] SASS
 
 ### Scopes
