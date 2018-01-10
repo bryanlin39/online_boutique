@@ -8,7 +8,13 @@
   </div>
 
   <div class='right aligned column'>
-    <h3>Price: <%= number_to_currency(@product.price) %></h3>
+    <h3>Price: <%= number_to_currency @product.price %></h3>
+
+    <%= form_for @order_item do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.number_field :quantity %>
+      <%= f.submit "Add to Cart" %>
+    <% end %></p>
   </div>
 </div>
 

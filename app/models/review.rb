@@ -8,6 +8,8 @@ class Review < ApplicationRecord
 
   after_save :update_product_rating
 
+private
+
   def update_product_rating
     self.product.update_rating
   end

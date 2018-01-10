@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
 
   has_many :reviews
+  has_many :order_items
 
   validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }, allow_nil: true
 

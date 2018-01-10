@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   # helper_method :authorize_user, :authorize_admin
+  helper_method :current_order
 
   def authorize_user
     unless current_user
@@ -14,6 +15,14 @@ class ApplicationController < ActionController::Base
     unless current_user && current_user.admin
       flash[:alert] = 'You\'re not authorized to do that.'
       redirect_to '/'
+    end
+  end
+
+  def current_order
+    if session[:order_id]
+      Order.find(session[:order_id])
+    else
+      current_user.account.orders.new
     end
   end
 

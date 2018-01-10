@@ -8,16 +8,16 @@
 - [x] Account - user_id
   - [x] Belongs to User
   - [x] Has many Reviews
-  - [ ] Has many Orders
+  - [x] Has many Orders
 - [x] Product - name, description, price, rating, image
-  - [ ] Has many Order Items
+  - [x] Has many Order Items
   - [x] Has many Reviews
-- [ ] Order - status, subtotal, tax, shipping, total_price
-  - [ ] Belongs to Account
-  - [ ] Has many Order Items
-- [ ] Order Item - quantity
-  - [ ] Belongs to Order
-  - [ ] Belongs to Product
+- [x] Order - status, subtotal, tax, shipping, total_price
+  - [x] Belongs to Account
+  - [x] Has many Order Items
+- [x] Order Item - quantity
+  - [x] Belongs to Order
+  - [x] Belongs to Product
 - [x] Review - rating, content
   - [x] Belongs to Account
   - [x] Belongs to Product
