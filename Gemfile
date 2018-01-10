@@ -36,8 +36,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'semantic-ui-sass'
 gem 'devise'
-gem "paperclip", "~> 5.0.0"
+gem 'paperclip', '~> 5.0.0'
 gem 'faker'
+gem 'stripe'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +47,7 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'shoulda-matchers'
+  gem 'dotenv-rails'
 end
 
 group :development do

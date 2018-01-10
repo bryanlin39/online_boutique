@@ -37,6 +37,7 @@
 
 ### Misc
 - [ ] Stripe for checkout
+  * Check Stripe documentation for deploying to Heroku (API keys)
 - [ ] Devise admin dashboard
 
 ### Styling

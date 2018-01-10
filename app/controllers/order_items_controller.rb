@@ -1,8 +1,10 @@
 class OrderItemsController < ApplicationController
+  before_action :authorize_user
 
   def create
     product = Product.find(params[:order_item][:product_id].to_i)
     order = current_order
+    order.account = current_user.account
     order.order_items.new(order_item_params)
     order.save
     session[:order_id] = order.id

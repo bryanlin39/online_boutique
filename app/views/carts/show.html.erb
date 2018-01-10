@@ -41,6 +41,11 @@
     </tfoot>
   </table>
 
+  <%= link_to new_charge_path, class: 'ui right floated positive button' do %>
+    <i class="payment icon"></i>
+    Proceed to Checkout
+  <% end %>
+
 <% else %>
 
   <h3>Your shopping cart is empty.</h3>

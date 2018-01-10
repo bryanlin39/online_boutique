@@ -10,8 +10,11 @@ class Seed
 
   def clear_database
     User.destroy_all
+    Account.destroy_all
     Product.destroy_all
     Review.destroy_all
+    Order.destroy_all
+    OrderItem.destroy_all
   end
 
   def create_users

@@ -21,8 +21,10 @@ class ApplicationController < ActionController::Base
   def current_order
     if session[:order_id]
       Order.find(session[:order_id])
+    elsif current_user && Order.in_progress(current_user).first
+      Order.in_progress(current_user).first
     else
-      current_user.account.orders.new
+      Order.new
     end
   end
 
