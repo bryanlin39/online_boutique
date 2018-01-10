@@ -32,11 +32,21 @@
 - [ ] Account Profile
   - [ ] Order history
   - [ ] Reviews
+- [ ] Checkout page
+  - [ ] Subtotal, shipping, tax, total
+  - [ ] Receipt page
+- [ ] Product index page - list by date added
+  - [ ] Scopes to sort by date added, price low to high, price high to low, most reviewed
+- [ ] Home page
+  - [ ] 3 recently added products
+  - [ ] 3 most reviewed
+- [ ] About page
+- [ ] Contact page
 - [ ] Sticky footer for all pages
   * https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 ### Misc
-- [ ] Stripe for checkout
+- [x] Stripe for checkout
   * Check Stripe documentation for deploying to Heroku (API keys)
 - [ ] Devise admin dashboard
 
@@ -58,8 +68,9 @@
   - [ ] FactoryBot
 - [ ] Email confirmation
   - [ ] On sign up
-  - [ ] On checkout
+  - [ ] After checkout
 - [ ] APIs
   - [ ] Sales tax
 - [ ] Add avatars to accounts
 - [ ] Pagination for reviews
+- [ ] Deploy to Heroku
