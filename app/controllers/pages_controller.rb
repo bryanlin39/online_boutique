@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     @user = current_user
     @account = current_user.account
     @order_history = Order.completed(@user)
+    @reviews = @account.reviews
   end
 
 end

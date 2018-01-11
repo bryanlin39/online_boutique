@@ -31,7 +31,7 @@
   - [x] User authorization for delete and edit
 - [x] Account Profile
   - [x] Order history
-  - [ ] Reviews
+  - [x] Reviews
 - [x] Checkout
   - [x] Subtotal, shipping, tax, total
   - [x] Receipt page

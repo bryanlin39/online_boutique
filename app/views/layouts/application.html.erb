@@ -22,7 +22,10 @@
             <i class="shop icon"></i>
             Cart
           <% end %>
-          <%= link_to current_user.username, profile_path, class: "item" %>
+          <%= link_to profile_path, class: "item" do %>
+            <i class="user icon"></i>
+            <%= current_user.username %>
+          <% end %>
           <%= link_to "Sign Out", destroy_user_session_path, class: "item", method: 'delete' %>
         <% else %>
           <%= link_to "Sign Up", new_user_registration_path, class: "item" %>
