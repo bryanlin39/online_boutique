@@ -44,6 +44,7 @@
 - [ ] Contact page
 - [ ] Sticky footer for all pages
   * https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+- [ ] Breadcrumbs
 
 ### Misc
 - [x] Stripe for checkout

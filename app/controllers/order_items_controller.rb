@@ -8,7 +8,7 @@ class OrderItemsController < ApplicationController
     order.order_items.new(order_item_params)
     order.save
     session[:order_id] = order.id
-    redirect_to product_path(product), notice: "You've updated your shopping cart."
+    redirect_to cart_path, notice: "You've updated your shopping cart."
   end
 
   def destroy

@@ -1,4 +1,17 @@
 <div class='ui grid'>
+
+  <div class='row'>
+    <div class='sixteen wide column'>
+      <div class="ui breadcrumb">
+        <a href='/' class="section">Home</a>
+        <i class="right chevron icon divider"></i>
+        <a href='/products' class="section">Products</a>
+        <i class="right chevron icon divider"></i>
+        <p class="section"><%= @product.name %></p>
+      </div>
+    </div>
+  </div>
+
   <div class='thirteen wide column'>
     <h1><%= @product.name %></h1>
 
