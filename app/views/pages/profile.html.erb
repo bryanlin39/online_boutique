@@ -3,4 +3,10 @@
 <h3>Profile Information</h3>
 <h5>Email: <%= @user.email %></h5>
 
-<h3>Previous Orders</h3>
+<h3>Order History</h3>
+
+<ul>
+  <% @order_history.each do |order| %>
+    <li><%= number_to_currency order.total_price %></li>
+  <% end %>
+</ul>

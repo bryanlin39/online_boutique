@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @account = current_user.account
+    @order_history = Order.completed(@user)
   end
 
 end

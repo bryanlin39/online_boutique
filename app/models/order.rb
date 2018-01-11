@@ -7,6 +7,7 @@ class Order < ApplicationRecord
   before_save :update_subtotal, :update_total
 
   scope :in_progress, -> (user) {where(account_id: user.account.id, status: 'In Progress')}
+  scope :completed, -> (user) {where(account_id: user.account.id, status: 'Completed')}
 
   def calculate_subtotal
     self.order_items.collect { |item| item.product.price * item.quantity }.sum
