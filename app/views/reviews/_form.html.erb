@@ -1,3 +1,23 @@
+<div class="ui breadcrumb">
+  <a href='/' class="section">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a href='/products' class="section">Products</a>
+  <i class="right chevron icon divider"></i>
+  <a href='/products/<%= @product.id %>' class="section"><%= @product.name %></a>
+  <i class="right chevron icon divider"></i>
+  <p class="section">Review</p>
+</div>
+
+<h1><%= @product.name %></h1>
+<div class='ui small image'>
+  <%= image_tag @product.image  %>
+</div>
+
+<h4 class='ui horizontal divider header'>
+  <i class='write icon'></i>
+  Review
+</h4>
+
 <%= render 'layouts/errors', object: @review %>
 
 <%= form_for [@product, @review], html: { multipart: true, class: 'ui form' } do |f| %>

@@ -77,4 +77,4 @@
   - [ ] Shipping costs
   - [ ] Mailer
 - [ ] Add avatars to accounts
-- [ ] Pagination for reviews
+- [ ] Pagination for reviews, order history

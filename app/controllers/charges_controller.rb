@@ -8,6 +8,9 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     @order = current_order
+    @order.order_number = Faker::Code.asin
+    @order.save
+
     @amount = (@order.total_price * 100).to_i
 
     # Shipping information

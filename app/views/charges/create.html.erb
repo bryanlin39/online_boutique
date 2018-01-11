@@ -3,7 +3,9 @@
   Thank you for your business, <%= current_user.username %>!
 </h2>
 
-<h3>Your order will be shipped to <span class='green-text'><i><%= @name %></i></span> at <span class='green-text'><i><%= @address %></i></span> in 5-7 business days.</h3>
+<h3>Your order number is # <%= @order.order_number %>.</h3>
+
+<h3>Your order will be ship in 5-7 business days to <span class='green-text'><i><%= @name %></i></span> at <span class='green-text'><i><%= @address %></i></span>.</h3>
 
 <h3>You will receive a confirmation email (<span class='green-text'><i><%= @email %></i></span>) with a copy of the receipt below. You can also view your <%= link_to 'order history', profile_path %> in your profile page.</h3>
 
