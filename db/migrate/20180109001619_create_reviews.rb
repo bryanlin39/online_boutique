@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.integer :account_id
       t.integer :product_id
       t.string :content
-      t.integer :rating, default: 1
+      t.integer :rating, default: 5
 
       t.timestamps
     end

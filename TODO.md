@@ -29,8 +29,8 @@
 - [x] CRUD for Review
   - [x] Admin authorization for delete
   - [x] User authorization for delete and edit
-- [ ] Account Profile
-  - [ ] Order history
+- [x] Account Profile
+  - [x] Order history
   - [ ] Reviews
 - [x] Checkout
   - [x] Subtotal, shipping, tax, total
@@ -44,7 +44,7 @@
 - [ ] Contact page
 - [ ] Sticky footer for all pages
   * https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
-- [ ] Breadcrumbs
+- [x] Breadcrumbs
 
 ### Misc
 - [x] Stripe for checkout
