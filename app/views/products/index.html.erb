@@ -4,7 +4,18 @@
   <p class="section">Products</a>
 </div>
 
-<h1>All Products</h1>
+<div class='ui two column grid'>
+  <div class='column'>
+    <h1>All Products</h1>
+  </div>
+  <div class='right aligned column'>
+    <%= form_tag '/products', method: 'get', html: { multipart: true, class: 'ui form' } do %>
+      <div class='field'>
+        <%= select_tag 'sort', options_for_select([['Sort By', ''], ['Customer Rating', 'rating'], ['Date: New to Old', 'new'], ['Date: Old to New', 'old'], ['Price: Low to High', 'low'], ['Price: High to Low', 'high']], "#{ @sort_option }"), {class: 'ui dropdown', onchange: 'this.form.submit()'} %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <% if @products.any? %>
   <div class='ui three cards'>

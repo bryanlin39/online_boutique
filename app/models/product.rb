@@ -9,10 +9,12 @@ class Product < ApplicationRecord
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  scope :alphabetical_a_to_z, -> { order('name DESC') }
-  scope :alphabetical_z_to_a, -> { order('name DESC') }
-  scope :date_added_newest, -> { order('created_at DESC') }
-  scope :date_added_oldest, -> { order('created_at ASC') }
+  scope :alphabetical, -> { order('name ASC') }
+  scope :rating_highest, -> { order('rating DESC') }
+  scope :date_newest, -> { order('created_at DESC') }
+  scope :date_oldest, -> { order('created_at ASC') }
+  scope :price_lowest, -> { order('price ASC') }
+  scope :price_highest, -> { order('price DESC') }
 
   scope :recently_added, -> { order('created_at DESC').limit(3)}
   scope :most_reviewed, -> {(

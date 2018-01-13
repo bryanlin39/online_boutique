@@ -2,7 +2,20 @@ class ProductsController < ApplicationController
   before_action :authorize_admin, except: [:index, :show]
 
   def index
-    @products = Product.all
+    @sort_option = params[:sort]
+    if @sort_option == 'rating'
+      @products = Product.rating_highest
+    elsif @sort_option == 'new'
+      @products = Product.date_newest
+    elsif @sort_option == 'old'
+      @products = Product.date_oldest
+    elsif @sort_option == 'low'
+      @products = Product.price_lowest
+    elsif @sort_option == 'high'
+      @products = Product.price_highest
+    else
+      @products = Product.alphabetical
+    end
   end
 
   def show

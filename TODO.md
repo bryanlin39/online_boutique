@@ -35,7 +35,7 @@
 - [x] Checkout
   - [x] Subtotal, shipping, tax, total
   - [x] Receipt page
-- [ ] Product index page - list by date added
+- [x] Product index page - list by date added
   - [x] Scopes to sort by date added, price low to high, price high to low, most reviewed
 - [x] Home page
   - [x] 3 recently added products
