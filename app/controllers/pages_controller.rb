@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 
   def home
+    @recently_added = Product.recently_added
+    @most_reviewed = Product.most_reviewed
   end
 
   def profile

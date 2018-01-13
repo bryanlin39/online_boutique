@@ -1,1 +1,15 @@
 <h1>Welcome to the Online Boutique</h1>
+
+<h3>Newest Products</h3>
+<div class='ui three cards'>
+  <% @recently_added.each do |product| %>
+    <%= render 'products', product: product %>
+  <% end %>
+</div>
+
+<h3>Most Reviewed Products</h3>
+<div class='ui three cards'>
+  <% @most_reviewed.each do |product| %>
+    <%= render 'products', product: product %>
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+<div class='card'>
+
+    <div class='ui dimmer'>
+      <div class='content'>
+        <div class='center'>
+          <h2><%= link_to product.name, product_path(product), class: 'white-text' %></h2>
+          <h3><%= number_to_currency product.price %></h3>
+        </div>
+      </div>
+    </div>
+
+  <div class='image'>
+    <%= image_tag product.image %>
+  </div>
+
+</div>

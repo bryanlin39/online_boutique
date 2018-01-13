@@ -36,10 +36,10 @@
   - [x] Subtotal, shipping, tax, total
   - [x] Receipt page
 - [ ] Product index page - list by date added
-  - [ ] Scopes to sort by date added, price low to high, price high to low, most reviewed
-- [ ] Home page
-  - [ ] 3 recently added products
-  - [ ] 3 most reviewed
+  - [x] Scopes to sort by date added, price low to high, price high to low, most reviewed
+- [x] Home page
+  - [x] 3 recently added products
+  - [x] 3 most reviewed
 - [ ] About page
 - [ ] Contact page
 - [ ] Sticky footer for all pages
@@ -57,11 +57,6 @@
 - [x] SemanticUI
   - [x] Icons
 - [ ] SASS
-
-### Scopes
-- [ ] Product
-  - [ ] Recently added
-  - [ ] Most reviewed
 
 
 ## Further Exploration
