@@ -52,6 +52,7 @@
 - [ ] Devise admin dashboard
 - [ ] Deploy to Heroku
 - [ ] README
+  * Technologies used: Ruby, Rails, JavaScript, HTML/CSS, SemanticUI, Git, AJAX, Stripe, jQuery
 
 ### Styling
 - [x] SemanticUI

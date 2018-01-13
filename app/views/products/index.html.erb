@@ -21,9 +21,9 @@
   <div class='ui three cards'>
     <% @products.each do |product| %>
       <div class='card'>
-        <div class='image'>
+        <%= link_to product_path(product), class: 'image' do %>
           <%= image_tag product.image %>
-        </div>
+        <% end %>
         <div class='content'>
           <div class='header'>
             <%= link_to product.name, product_path(product) %>
