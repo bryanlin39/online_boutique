@@ -12,4 +12,7 @@ class PagesController < ApplicationController
     @reviews = @account.reviews
   end
 
+  def contact
+  end
+
 end

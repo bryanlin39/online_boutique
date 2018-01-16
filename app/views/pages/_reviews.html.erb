@@ -1,0 +1,28 @@
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+  <div class='ui fluid card'>
+    <div class='content'>
+      <div class='header'><%= review.product.name %></div>
+      <div class='meta'>
+        <span class='left floated time'><%= review.created_at.strftime('%m-%d-%Y') %></span>
+        <span class='right floated ui star rating disabled-rating' data-rating='<%= review.rating %>'></span>
+      </div>
+      <div class='description'>
+        <p><%= review.content %></p>
+      </div>
+    </div>
+    <div class='extra content'>
+      <div>
+        <i class="edit icon"></i>
+        <%= link_to 'Edit', edit_product_review_path(review.product, review) %>
+        <div class='right floated'>
+          <i class="trash icon"></i>
+          <%= link_to 'Delete', product_review_path(review.product, review), method: 'delete', data: {confirm: 'Delete this review?'} %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <p>You haven't written any reviews yet.</p>
+<% end %>

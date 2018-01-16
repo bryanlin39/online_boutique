@@ -56,38 +56,9 @@
   Write a Review
 </a>
 
-<% if @reviews.any? %>
-  <% @reviews.each do |review| %>
-  <div class='ui card'>
-    <div class='content'>
-      <div class='header'><%= review.account.user.username %></div>
-      <div class='meta'>
-        <span class='left floated time'><%= review.created_at.strftime('%m-%d-%Y') %></span>
-        <span class='right floated ui star rating disabled-rating' data-rating='<%= review.rating %>'></span>
-      </div>
-      <div class='description'>
-        <p><%= review.content %></p>
-      </div>
-    </div>
-    <% if current_user && (review.account == current_user.account || current_user.admin) %>
-      <div class='extra content'>
-        <div>
-          <% if current_user && (review.account == current_user.account) %>
-            <i class="edit icon"></i>
-            <%= link_to 'Edit', edit_product_review_path(@product, review) %>
-          <% end %>
-          <div class='right floated'>
-            <i class="trash icon"></i>
-            <%= link_to 'Delete', product_review_path(@product, review), method: 'delete', data: {confirm: 'Delete this review?'} %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <% end %>
-<% else %>
-  <p>No reviews for this product yet.</p>
-<% end %>
+<div id='product-reviews'>
+  <%= render 'reviews' %>
+</div>
 
 <% if current_user && current_user.admin %>
   <h4 class="ui horizontal divider header">

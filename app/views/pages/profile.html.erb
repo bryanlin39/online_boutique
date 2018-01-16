@@ -13,58 +13,7 @@
 
   <div class='eight wide column'>
     <h2>Order History</h2>
-    <% if @order_history.any? %>
-      <% @order_history.each do |order| %>
-        <div class='ui fluid card'>
-
-          <div class='content'>
-            <div class='ui two column grid'>
-              <div class='column'>
-                <h3 class='ui header'>
-                  Order Placed
-                  <div class='sub header'><%= order.updated_at.strftime('%b %d, %Y') %></div>
-                </h3>
-              </div>
-              <div class='column'>
-                <h3 class='ui right aligned header'>
-                  Total
-                  <div class='sub header'><%= number_to_currency order.total_price %></div>
-                </h3>
-              </div>
-            </div>
-          </div>
-
-          <div class='content'>
-            <div class='ui items'>
-              <% order.order_items.each do |item| %>
-                <div class='item'>
-                  <div class='ui tiny image'>
-                    <%= image_tag item.product.image  %>
-                  </div>
-                  <div class='content'>
-                    <%= link_to new_product_review_path(item.product), class: 'ui right floated compact primary button' do %>
-                      <i class="write icon"></i>
-                      Review
-                    <% end %>
-                    <div class='header'><%= link_to item.product.name, product_path(item.product) %></div>
-                    <div class='description'><%= number_to_currency item.product.price %></div>
-                    <div class='meta'>Qty: <%= item.quantity %></div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-
-          <div class='right aligned content'>
-            <h4>Order # <%= order.order_number %></h4>
-          </div>
-
-        </div>
-      <% end %>
-    <% else %>
-      <h5>You haven't made a purchase yet.</h5>
-      <%= link_to 'Start Shopping!', products_path %>
-    <% end %>
+    <%= render 'order_history' %>
   </div>
 
   <div class='two wide column'>
@@ -72,34 +21,7 @@
 
   <div class='six wide column'>
     <h2>Product Reviews</h2>
-    <% if @reviews.any? %>
-      <% @reviews.each do |review| %>
-      <div class='ui fluid card'>
-        <div class='content'>
-          <div class='header'><%= review.product.name %></div>
-          <div class='meta'>
-            <span class='left floated time'><%= review.created_at.strftime('%m-%d-%Y') %></span>
-            <span class='right floated ui star rating disabled-rating' data-rating='<%= review.rating %>'></span>
-          </div>
-          <div class='description'>
-            <p><%= review.content %></p>
-          </div>
-        </div>
-        <div class='extra content'>
-          <div>
-            <i class="edit icon"></i>
-            <%= link_to 'Edit', edit_product_review_path(review.product, review) %>
-            <div class='right floated'>
-              <i class="trash icon"></i>
-              <%= link_to 'Delete', product_review_path(review.product, review), method: 'delete', data: {confirm: 'Delete this review?'} %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    <% else %>
-      <p>You haven't written any reviews yet.</p>
-    <% end %>
+    <%= render 'reviews' %>
   </div>
 
 </div>

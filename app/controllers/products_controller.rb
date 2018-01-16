@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @order_item = current_order.order_items.new
-    @reviews = @product.reviews
+    @reviews = @product.reviews.page(params[:page] || 1).per(5)
   end
 
   def new
