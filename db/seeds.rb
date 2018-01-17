@@ -21,8 +21,8 @@ class Seed
     @admin = User.create(
       email: 'admin@email.com',
       username: 'admin',
-      password: 'asdfasdf',
-      password_confirmation: 'asdfasdf',
+      password: 'fdsafdsa1',
+      password_confirmation: 'fdsafdsa1',
       admin: true
     )
     @user = User.create(

@@ -48,7 +48,7 @@
 - [x] Stripe for checkout
   * Check Stripe documentation for deploying to Heroku (API keys)
 - [ ] Devise admin dashboard
-- [ ] Deploy to Heroku*
+- [x] Deploy to Heroku
 - [x] README
 - [x] Seed more products
 

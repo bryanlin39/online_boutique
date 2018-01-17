@@ -11,7 +11,7 @@ _Online Boutique is an e-commerce platform for small-business owners to exhibit 
 
 ## Installation and Setup
 
-View the application directly at .
+View the application directly at https://blooming-lake-67400.herokuapp.com/.
 
 To install on your own machine, please follow the instructions below:
 
@@ -39,13 +39,15 @@ To install on your own machine, please follow the instructions below:
 
 ### User Setup
 
-* Sign in as the seeded admin user to access admin privileges for adding/editing/removing products:
-  * Email: admin@email.com
-  * Password: asdfasdf
 * Sign up as a normal user to add items to your cart, checkout, and write product reviews
 * Alternatively, sign in as the seeded customer to edit pre-populated reviews:
   * Email: user@email.com
   * Password: asdfasdf
+* To give admin privileges (to the most recently created user):
+  ```
+  $ rails c
+  $ User.last.update(admin: true)
+  ```
 
 ## Known Bugs
 
