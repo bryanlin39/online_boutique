@@ -1,7 +1,7 @@
 # Online Boutique
 
 #### _E-commerce web application created with Ruby on Rails_
-#### January 16, 2018
+#### _January 16, 2018_
 
 ### By Bryan Lin
 
@@ -15,7 +15,7 @@ View the application directly at .
 
 To install on your own machine, please follow the instructions below:
 
-* You will need the following things properly installed on your computer:
+* You will need the following properly installed on your computer:
   * Ruby
   * Rails
   * PostgreSQL
