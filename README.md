@@ -49,6 +49,14 @@ To install on your own machine, please follow the instructions below:
   $ User.last.update(admin: true)
   ```
 
+### Stripe Payment
+
+To make a mock payment, use the following credit card information:
+
+* Card number: 4242 4242 4242 4242
+* Expiration date: 10/20
+* CVC: 123
+
 ## Known Bugs
 
 None
