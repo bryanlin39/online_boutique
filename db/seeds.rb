@@ -47,27 +47,51 @@ class Seed
   def create_products
     Product.create(
       name: 'Bar Cart',
-      description: 'A classy display for your spirits collection.',
-      price: 125.00,
+      description: 'Classy display for your spirits collection. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
+      price: 165.00,
       image: open('public/images/bar_cart.jpg')
     )
     Product.create(
       name: 'Duffel Bag',
-      description: 'Weekender traveler bag in brown leather.',
+      description: 'Weekender traveler bag in brown leather. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
       price: 140.00,
       image: open('public/images/duffel.jpg')
     )
     Product.create(
       name: 'Teepee Bed',
-      description: 'Mini tent for pets to camp in the house.',
-      price: 70.00,
+      description: 'Mini tent for pets to camp in the house. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
+      price: 90.00,
       image: open('public/images/teepee.jpg')
     )
     Product.create(
       name: 'Coat Hanger',
-      description: 'A modern wall unit to hang coats and jackets.',
-      price: 48.00,
+      description: 'Modern wall unit to hang coats and jackets. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
+      price: 42.00,
       image: open('public/images/coat_hanger.jpg')
+    )
+    Product.create(
+      name: 'Terrarium',
+      description: 'Miniature plant ecosystem enclosed in a cubic glass container. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
+      price: 56.00,
+      image: open('public/images/terrarium.jpg')
+    )
+    Product.create(
+      name: 'Bracelet',
+      description: 'Intricate bracelet with teal and white tones and a gold clasp. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
+      price: 23.00,
+      image: open('public/images/bracelet.jpg')
+    )
+    Product.create(
+      name: 'Sunglasses',
+      description: 'Rose gold sunglasses with a pink trim. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
+      price: 75.00,
+      image: open('public/images/sunglasses.jpg')
+    )
+    Product.create(
+      name: 'Coffee Table',
+      description: 'Table with a wood top and black metal frames for the living room. The following sentences are populated with Lorem Ipsum. ' + Faker::Lorem.paragraph,
+      price: 215.00,
+      image: open('public/images/coffee_table.jpg')
     )
   end
 

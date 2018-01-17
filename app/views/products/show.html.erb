@@ -42,9 +42,14 @@
   Description
 </h4>
 
-<h5><%= @product.description %></h5>
-
-<%= image_tag @product.image %>
+<div class='ui two column grid'>
+  <div class='column'>
+    <h5><%= @product.description %></h5>
+  </div>
+  <div class='right aligned column'>
+    <%= image_tag @product.image, class: 'ui fluid image' %>
+  </div>
+</div>
 
 <h4 class='ui horizontal divider header'>
   <i class='comments icon'></i>

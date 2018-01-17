@@ -50,7 +50,7 @@
 - [ ] Devise admin dashboard
 - [ ] Deploy to Heroku*
 - [x] README
-- [ ] Seed more products
+- [x] Seed more products
 
 
 ## Further Exploration
