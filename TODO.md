@@ -25,7 +25,7 @@
 ### Views
 - [x] CRUD for Product
   - [x] Admin authorization
-- [x] CRUD for Shopping Cart
+- [x] Shopping Cart
 - [x] CRUD for Review
   - [x] Admin authorization for delete
   - [x] User authorization for delete and edit
@@ -35,14 +35,13 @@
 - [x] Checkout
   - [x] Subtotal, shipping, tax, total
   - [x] Receipt page
-- [x] Product index page - list by date added
-  - [x] Scopes to sort by date added, price low to high, price high to low, most reviewed
+- [x] Product index page
+  - [x] Scopes to sort by customer rating, date added, price
 - [x] Home page
   - [x] 3 recently added products
   - [x] 3 most reviewed
-- [ ] About page
-- [ ] Contact page*
-- [x] Sticky footer for all pages*
+- [x] Contact page
+- [x] Sticky footer for all pages
 - [x] Breadcrumbs
 
 ### Misc
@@ -50,13 +49,8 @@
   * Check Stripe documentation for deploying to Heroku (API keys)
 - [ ] Devise admin dashboard
 - [ ] Deploy to Heroku*
-- [ ] README*
-  * Technologies used: Ruby, Rails, JavaScript, HTML/CSS, SemanticUI, Git, AJAX, Stripe, jQuery
-
-### Styling
-- [x] SemanticUI
-  - [x] Icons
-- [x] SASS
+- [x] README
+- [ ] Seed more products
 
 
 ## Further Exploration
@@ -64,9 +58,10 @@
 - [ ] Testing*
   - [ ] SimpleCov
   - [ ] FactoryBot
-- [ ] Email confirmation
+- [ ] Send email confirmation
   - [ ] On sign up
   - [ ] After checkout
+  - [ ] Contact message received
 - [ ] APIs
   - [ ] Sales tax
   - [ ] Shipping costs
