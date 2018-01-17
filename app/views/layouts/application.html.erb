@@ -10,18 +10,23 @@
 
   <body>
 
-    <div class="ui menu">
+    <div id="main-navbar" class="ui menu">
       <div class="header item">
         Online Boutique
       </div>
       <%= link_to "Home", root_path, class: "item" %>
       <%= link_to "Products", products_path, class: "item" %>
+      <%= link_to "Contact", contact_path, class: "item" %>
       <div class="right menu">
         <% if current_user %>
-          <%= link_to cart_path, class: "item cart-popup", :'data-content' => "#{current_order.total_items} items" do %>
+          <a href='/cart' class='item cart-popup' data-content='<%= current_order.total_items %> items'>
+            <i class='shop icon'></i>
+            Cart
+          </a>
+          <!-- <%= link_to cart_path, class: "item cart-popup", :'data-content' => "#{current_order.total_items} items" do %>
             <i class="shop icon"></i>
             Cart
-          <% end %>
+          <% end %> -->
           <%= link_to profile_path, class: "item" do %>
             <i class="user icon"></i>
             <%= current_user.username %>
@@ -29,13 +34,13 @@
           <%= link_to "Sign Out", destroy_user_session_path, class: "item", method: 'delete' %>
         <% else %>
           <%= link_to "Sign Up", new_user_registration_path, class: "item" %>
-          <%= link_to "Sign In", new_user_session_path, class: "item" %>
+          <%= link_to "Log In", new_user_session_path, class: "item" %>
         <% end %>
       </div>
     </div>
 
     <% if flash[:alert] %>
-      <div class="ui container">
+      <div class="ui container" id="flash-alert">
         <div class="ui negative message">
           <i class="close icon"></i>
           <%= flash[:alert] %>
@@ -44,7 +49,7 @@
     <% end %>
 
     <% if flash[:notice] %>
-      <div class="ui container">
+      <div class="ui container" id="flash-notice">
         <div class="ui green message">
           <i class="close icon"></i>
           <%= flash[:notice] %>
@@ -52,8 +57,58 @@
       </div>
     <% end %>
 
-    <div class="ui container">
+    <div id="main-content" class="ui container">
       <%= yield %>
+    </div>
+
+    <div id="main-footer" class="ui secondary grey inverted vertical footer segment">
+      <div class="ui center aligned container">
+        <div class="ui stackable divided grid">
+          <div class="four wide column">
+            <h3 class="ui header">Us</h3>
+            <div class="ui inverted link list">
+              <div class="item">
+                <%= link_to 'Home', root_path, class: 'item' %>
+              </div>
+              <div class="item">
+                <%= link_to 'Products', products_path, class: 'item' %>
+              </div>
+              <div class="item">
+                <%= link_to 'Contact', contact_path, class: 'item' %>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <h3 class="ui header">You</h3>
+            <div class="ui inverted link list">
+              <div class="item">
+                <%= link_to 'Profile', profile_path, class: 'item' %>
+              </div>
+              <div class="item">
+                <%= link_to 'Cart', cart_path, class: 'item' %>
+              </div>
+            </div>
+          </div>
+          <div class="eight wide column">
+            <h3 class="ui header">Online Boutique</h3>
+            <p>Online Boutique is an ecommerce platform for small-business owners to display their products, receive consumer feedback, and generate revenue.</p>
+          </div>
+        </div>
+        <div class="ui section divider"></div>
+        <h4 class="ui header">
+          <i class="copyright icon"></i>BRYAN LIN 2018
+        </h4>
+        <div class="ui horizontal small divided inverted link list">
+          <a href="https://www.github.com/bryanlin39" class="item">
+            <i class="github square icon"></i>
+            Github
+          </a>
+          <a href="https://www.linkedin.com/in/bryanlin39" class="item">
+            <i class="linkedin square icon"></i>
+            LinkedIn
+          </a>
+        </div>
+      </div>
     </div>
 
   </body>

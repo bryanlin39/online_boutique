@@ -13,10 +13,14 @@ class OrderItemsController < ApplicationController
 
   def destroy
     order = current_order
-    item = OrderItem.find(params[:id])
-    item.destroy
+    @item = OrderItem.find(params[:id])
+    @item.destroy
     order.save
-    redirect_to cart_path, notice: "You've updated your shopping cart."
+
+    respond_to do |format|
+      format.html { redirect_to products_path }
+      format.js
+    end
   end
 
 private

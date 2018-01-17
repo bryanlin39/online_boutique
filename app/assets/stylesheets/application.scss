@@ -18,3 +18,27 @@
 @import "semantic-ui/collections/menu";
 @import 'fonts';
 @import 'pagination';
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+#main-content {
+  flex: 1;
+  margin-bottom: 50px;
+}
+
+#main-header {
+  flex: none;
+}
+
+#main-footer {
+  flex: none;
+  padding-top: 40px;
+}

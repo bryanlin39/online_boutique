@@ -41,28 +41,27 @@
   - [x] 3 recently added products
   - [x] 3 most reviewed
 - [ ] About page
-- [ ] Contact page
-- [ ] Sticky footer for all pages
-  * https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+- [ ] Contact page*
+- [x] Sticky footer for all pages*
 - [x] Breadcrumbs
 
 ### Misc
 - [x] Stripe for checkout
   * Check Stripe documentation for deploying to Heroku (API keys)
 - [ ] Devise admin dashboard
-- [ ] Deploy to Heroku
-- [ ] README
+- [ ] Deploy to Heroku*
+- [ ] README*
   * Technologies used: Ruby, Rails, JavaScript, HTML/CSS, SemanticUI, Git, AJAX, Stripe, jQuery
 
 ### Styling
 - [x] SemanticUI
   - [x] Icons
-- [ ] SASS
+- [x] SASS
 
 
 ## Further Exploration
-- [ ] AJAX
-- [ ] Testing
+- [x] AJAX
+- [ ] Testing*
   - [ ] SimpleCov
   - [ ] FactoryBot
 - [ ] Email confirmation
@@ -73,4 +72,4 @@
   - [ ] Shipping costs
   - [ ] Mailer
 - [ ] Add avatars to accounts
-- [ ] Pagination for reviews, order history
+- [x] Pagination for reviews, order history

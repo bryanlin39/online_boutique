@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/profile', to: 'pages#profile', as: 'profile'
+  get '/contact', to: 'pages#contact', as: 'contact'
 
   resources :products do
     resources :reviews, except: [:index, :show]

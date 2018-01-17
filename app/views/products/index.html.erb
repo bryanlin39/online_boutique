@@ -4,10 +4,13 @@
   <p class="section">Products</a>
 </div>
 
+<br><br>
+
 <div class='ui two column grid'>
   <div class='column'>
     <h1>All Products</h1>
   </div>
+
   <div class='right aligned column'>
     <%= form_tag '/products', method: 'get', html: { multipart: true, class: 'ui form' } do %>
       <div class='field'>

@@ -18,30 +18,30 @@
     </thead>
     <tbody>
       <% @order_items.each do |item| %>
-      <tr>
-        <td>
-          <h1 class='ui header'>
-            <%= image_tag item.product.image, class: 'ui circular image' %>
-            <div class='content'>
-              <h3><%= item.product.name %></h3>
-            </div>
-          </h1>
-        </td>
-        <td class='center aligned'><%= number_to_currency item.product.price %></td>
-        <td class='center aligned'><%= item.quantity %></td>
-        <td class='center aligned'><%= number_to_currency (item.product.price * item.quantity) %></td>
-        <td class='right aligned'>
-          <%= link_to order_item_path(item), data: {confirm: 'Remove from cart?', method: 'delete'} do %>
-            <i class="trash outline icon"></i>
-          <% end %>
-        </td>
-      </tr>
+        <tr id='cart-item-<%= item.id %>'>
+          <td>
+            <h1 class='ui header'>
+              <%= image_tag item.product.image, class: 'ui circular image' %>
+              <div class='content'>
+                <h3><%= item.product.name %></h3>
+              </div>
+            </h1>
+          </td>
+          <td class='center aligned'><%= number_to_currency item.product.price %></td>
+          <td class='center aligned'><%= item.quantity %></td>
+          <td class='center aligned'><%= number_to_currency (item.product.price * item.quantity) %></td>
+          <td class='right aligned'>
+            <%= link_to order_item_path(item), data: {confirm: 'Remove from cart?', method: 'delete'}, remote: true do %>
+              <i class="trash outline icon"></i>
+            <% end %>
+          </td>
+        </tr>
       <% end %>
     </tbody>
     <tfoot>
       <tr class='right aligned full-width'>
         <th colspan='5'>
-          <h3>Your Subtotal: <%= number_to_currency current_order.subtotal %>
+          <h3 id='cart-subtotal'>Your Subtotal: <%= number_to_currency current_order.subtotal %></h3>
         </th>
       </tr>
     </tfoot>
