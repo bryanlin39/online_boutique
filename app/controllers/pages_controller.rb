@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :authorize_user, only: [:profile]
 
   def home
     @recently_added = Product.recently_added
@@ -13,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    
   end
 
 end
