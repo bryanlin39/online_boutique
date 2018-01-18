@@ -21,7 +21,7 @@ To install on your own machine, please follow the instructions below:
   * PostgreSQL
 * Clone the repository: ``` $ git clone https://github.com/bryanlin39/online_boutique ```
 * Navigate to the project directory: ``` $ cd online_boutique ```
-* Create a ```.env``` file in the root directory:
+* Create a ``` .env ``` file in the root directory:
   ```
   PUBLISHABLE_KEY='[Your Stripe Publishable Key]'
   SECRET_KEY='[Your Stripe Secret Key]'
@@ -35,7 +35,7 @@ To install on your own machine, please follow the instructions below:
   $ rails db:seed
   ```
 * Launch the application: ``` $ rails s ```
-* Navigate to the application home page: ```localhost:3000``` in your browser
+* Navigate to the application home page: ``` localhost:3000 ``` in your browser
 
 ### User Setup
 
@@ -53,9 +53,9 @@ To install on your own machine, please follow the instructions below:
 
 To make a mock payment, use the following credit card information:
 
-* Card number: 4242 4242 4242 4242
-* Expiration date: 10/20
-* CVC: 123
+* Card number: ``` 4242 4242 4242 4242 ```
+* Expiration date: ``` 10/20 ```
+* CVC: ``` 123 ```
 
 ## Known Bugs
 
