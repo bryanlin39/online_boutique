@@ -40,7 +40,7 @@ gem 'paperclip', '~> 5.0.0'
 gem 'faker'
 gem 'stripe'
 gem 'kaminari'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 2.3'
 gem 'dotenv-rails'
 
 group :development, :test do
